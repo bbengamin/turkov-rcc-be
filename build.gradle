@@ -20,6 +20,9 @@ sourceCompatibility = 1.8
 jar {
     baseName = 'turkov-rcc-be'
     version =  '1.0-SNAPSHOT'
+    manifest {
+        attributes 'Main-Class': 'ru.studioluck.turkovrccbe.Application'
+    }
 }
 
 repositories {
