@@ -1,5 +1,7 @@
 /out
 /out/*
+/log
+/log/*
 /target
 /target/*
 .gradle

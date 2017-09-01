@@ -1,12 +1,15 @@
 package ru.studioluck.turkovrccbe;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import ru.studioluck.turkovrccbe.server.Server;
+import ru.studioluck.turkovrccbe.server.ServerModule;
 
-@SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        Injector serverModuleInjector = Guice.createInjector(new ServerModule());
+        Server server = serverModuleInjector.getInstance(Server.class);
+        server.start();
     }
 }
