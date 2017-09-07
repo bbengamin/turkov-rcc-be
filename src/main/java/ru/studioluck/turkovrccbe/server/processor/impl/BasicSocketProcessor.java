@@ -5,7 +5,10 @@ import ru.studioluck.turkovrccbe.server.processor.SocketProcessor;
 import java.net.Socket;
 
 public class BasicSocketProcessor implements SocketProcessor {
+
     private Socket socket;
+
+
 
     public BasicSocketProcessor(Socket socket) {
         this.socket = socket;
