@@ -7,6 +7,10 @@ import org.apache.catalina.startup.Tomcat;
 import org.apache.catalina.webresources.DirResourceSet;
 import org.apache.catalina.webresources.EmptyResourceSet;
 import org.apache.catalina.webresources.StandardRoot;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.File;
 import java.net.URISyntaxException;
@@ -33,6 +37,11 @@ public class Application {
     }
 
     public static void main(String[] args) throws Exception {
+        ApplicationContext springContext = new ClassPathXmlApplicationContext("context.xml");
+
+        SimpleBean simpleBean = springContext.getBean("simpleBean", SimpleBean.class);
+        System.out.println(simpleBean);
+
 
         File root = getRootFolder();
         System.setProperty("org.apache.catalina.startup.EXIT_ON_INIT_FAILURE", "true");

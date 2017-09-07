@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.studio-luck</groupId>
-    <artifactId>turkov-rcc-be</artifactId>
+    <artifactId>${application.name}</artifactId>
     <version>1.0</version>
 
     <packaging>jar</packaging>
@@ -11,12 +11,14 @@
     <name>Turkov Remote Control Center</name>
 
     <properties>
+        <application.name>turkov-rcc-be</application.name>
         <tomcat.version>8.5.2</tomcat.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <dependencies>
+        <!-- EMBEDDED TOMCAT -->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
@@ -47,10 +49,18 @@
             <artifactId>tomcat-jsp-api</artifactId>
             <version>${tomcat.version}</version>
         </dependency>
+
+        <!-- SPRING -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.3.10.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
     <build>
-        <finalName>turkov-rcc-be</finalName>
+        <finalName>${application.name}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
