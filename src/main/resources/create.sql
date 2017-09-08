@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS `user`;
+
+CREATE TABLE `user` (
+ `id` bigint(20) NOT NULL AUTO_INCREMENT,
+ `email` varchar(255) NOT NULL,
+ PRIMARY KEY (`id`)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8
+DEFAULT COLLATE utf8_general_ci;
